@@ -261,7 +261,8 @@ classdef (Abstract) OpenSeesMatlabBase < handle
 
     methods (Access = protected)
         function tf = isAbsolutePath(~, pathStr)
-            tf = ~isempty(regexp(pathStr, '^[A-Za-z]:[\\/]|^\\\\', 'once'));
+            % Windows: C:\ or \\ (UNC); Unix/Mac: starts with /
+            tf = ~isempty(regexp(pathStr, '^[A-Za-z]:[\\/]|^\\\\|^/', 'once'));
         end
 
         function varargout = dispatchCommand(obj, cmd, varargin)
