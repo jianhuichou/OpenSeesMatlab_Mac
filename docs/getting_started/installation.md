@@ -37,7 +37,26 @@ OpenSeesMatlab uses a four-part version number in the format `MAJOR.MINOR.PATCH.
 
 MATLAB R2023a or later
 
-Windows operating system (currently only supported on Windows)
+macOS (Apple Silicon `arm64` or Intel `x86_64`)
+
+### Placing the Mac MEX binary
+
+OpenSeesMatlab communicates with the OpenSees engine through a compiled MATLAB MEX file.
+The file must be placed in the `OpenSeesMatlab/derived/` directory before use.
+
+| Architecture | File name |
+|---|---|
+| Apple Silicon (M-series, `arm64`) | `OpenSeesMATLAB.mexmaca64` |
+| Intel (`x86_64`) | `OpenSeesMATLAB.mexmaci64` |
+
+To find the architecture of your Mac, run `uname -m` in Terminal:
+- `arm64` → use `OpenSeesMATLAB.mexmaca64`
+- `x86_64` → use `OpenSeesMATLAB.mexmaci64`
+
+The pre-compiled Mac MEX binaries are provided in the
+[releases](https://github.com/jianhuichou/OpenSeesMatlab_Mac/releases) of this repository.
+Download the release package for your architecture and copy the MEX file into
+`OpenSeesMatlab/derived/` before running `installOpenSeesMatlab`.
 
 ## Changes Log
 [Changes Log](changelog.md)

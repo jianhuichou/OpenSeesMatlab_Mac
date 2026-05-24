@@ -70,7 +70,7 @@ opsMat.vis.plotModel();      % Visualize the model
 
 MATLAB R2023a or later
 
-Windows operating system (currently only supported on Windows)
+macOS (Apple Silicon `arm64` or Intel `x86_64`) — the pre-compiled MEX binary for Mac must be placed in `OpenSeesMatlab/derived/` before use (see [Installation](docs/getting_started/installation.md))
 
 
 For more detailed installation and usage instructions, see the documentation.
